@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Escolha um questionário e aprenda no seu ritmo.">
+  <title>Trilha Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" id="brand-home" aria-label="Trilha Quiz, início">
+      <span class="brand-mark" aria-hidden="true">✳</span>
+      <span>trilha<span class="brand-accent">.quiz</span></span>
+    </a>
+    <span class="topbar-note"><span class="status-dot"></span> Aprenda no seu ritmo</span>
+  </header>
+
+  <main class="page" id="inicio">
+    <section class="intro" id="catalog-intro" aria-labelledby="page-title">
+      <div class="eyebrow"><span>✦</span> SEU ESPAÇO DE APRENDIZADO</div>
+      <p>Escolha um tema, responda às perguntas e aprenda algo novo pelo caminho.</p>
+    </section>
+
+    <section id="catalog-view" aria-label="Questionários disponíveis">
+      <div class="section-heading">
+        <div><h2>Escolha seu questionário</h2><p>10 temas para explorar, um passo de cada vez.</p></div>
+        <span class="catalog-count">10 QUESTIONÁRIOS</span>
+      </div>
+      <div class="quiz-grid" id="quiz-grid"></div>
+    </section>
+
+    <section id="quiz-view" class="quiz-card" aria-label="Questionário" hidden>
+      <button class="back-to-catalog" id="back-to-catalog" type="button"><span aria-hidden="true">←</span> Todos os questionários</button>
+      <div class="quiz-header">
+        <div class="quiz-label"><span class="sparkle">✳</span> <span id="active-quiz-title">QUESTIONÁRIO</span></div>
+        <span class="question-count" id="question-count"></span>
+      </div>
+      <div class="progress-track" role="progressbar" aria-label="Progresso do questionário" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div id="quiz-content" aria-live="polite">
+        <div class="question-meta" id="question-topic"></div>
+        <h2 class="question-title" id="question-title"></h2>
+        <div class="answers" id="answers"></div>
+        <div class="feedback" id="feedback" hidden></div>
+        <div class="card-footer">
+          <span class="keyboard-hint">Escolha uma resposta para continuar</span>
+          <div class="quiz-actions">
+            <button class="next-button secondary-button" id="back-question" type="button" hidden><span aria-hidden="true">←</span> Voltar</button>
+            <button class="next-button" id="next-button" type="button" disabled>Conferir resposta <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </div>
+      <div id="result" class="result" hidden aria-live="polite"></div>
+    </section>
+
+  </main>
+  <footer>Um passo de cada vez. <span>✳</span></footer>
+</body>
+</html>
